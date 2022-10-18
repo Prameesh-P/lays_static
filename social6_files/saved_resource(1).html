@@ -1,0 +1,881 @@
+
+<!-- saved from url=(0011)about:blank -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500&subset=latin-ext);.header {
+    text-align: center;
+    padding: 14px;
+    position: relative;
+    line-height: 1.5rem;
+}
+
+.header h3 {
+    font-size: 1.2rem;
+    color: black;
+    margin-top: 5px;
+}
+
+.header__back, .header__close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    fill: #9da6b8;
+}
+
+.header__back {
+    left: 0;
+}
+
+.header__close {
+    right: 0;
+}.inspector {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 30px 50px 0 rgba(44,49,59,0.20);
+    max-height: 675px;
+    min-width: 310px;
+    overflow: hidden;
+}
+
+.inspector__content {
+    background: #f6f6f6;
+    padding: 10px 19px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 560px;
+}
+
+.inspector__content--small {
+    padding: 0;
+    height: 545px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.1rem;
+    color: #5a6170;
+    font-family: "Poppins", sans-serif;
+    margin: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: #9da6b8;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.inspector__main_content_wrapper {
+    position: relative;
+}.group-name {
+    color: #6c63ff;
+    padding: 5px 0 3px 0;
+    font-size: 1.6rem;
+}
+
+.color-property {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color-property:not(:first-child) {
+    position: relative;
+}
+
+.color-property__group.color-property {
+    position: relative;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.color-property:hover h1 {
+    opacity: 0.8;
+}
+
+.color-property:hover .color-property--copy {
+    opacity: 1;
+}
+
+.color-property--name-wrapper {
+    margin-left: 22px;
+}
+
+.color-property--name {
+    opacity: 0.6;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.color-property h1 {
+    font-size: 2.4rem;
+    font-weight: lighter;
+}
+
+.color-property--copy {
+    margin: 6px 22px;
+    padding: 12px;
+    border-radius: 18px;
+    opacity: 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.property {
+    display: inline-block;
+    width: 50%;
+}
+
+.property__wide {
+    width: 100%;
+}
+
+.property__tall {
+    margin-bottom: 5px;
+}
+
+.property__color, .property__asset {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: translateY(6px);
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.property__asset {
+    background-size: cover !important;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.property__asset-container {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+    box-sizing: border-box;
+}
+
+.property__asset-container:hover {
+    background: white;
+}
+
+.property__asset-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.property__value {
+    margin: 2px 0 12px 0;
+    display: inline-block;
+}
+
+.property-group__header {
+    color: #484e5d;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.property-group {
+    margin-bottom: 27px;
+}
+
+.og-image {
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1px;
+    font-size: 1rem;
+    border-radius: 1px;
+}
+
+.box__margin {
+    height: 138px;
+    width: 258px;
+    border: dotted 1px #6c63ff;
+}
+
+.box__padding {
+    height: 78px;
+    width: 168px !important;
+    flex-shrink: 0;
+    background-image: linear-gradient(65deg, rgba(107, 98, 255, 0.59), rgba(107, 98, 255, 0));
+    border: solid 1px #6c63ff;
+}
+
+.box__node {
+    color: #f4f6f9;
+    background: #373c46;
+    flex-shrink: 0;
+    min-height: 18px;
+    width: 78px !important;
+}
+
+.box__row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.box > * {
+    width: 100%;
+    text-align: center;
+}
+
+.box:not(.box__row) {
+    justify-content: space-around;
+}
+
+.round-handler {
+    height: 5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    background-color: #f6f6f6;
+}
+
+.image-model__image {
+    width: calc(100% + 38px);
+    position: relative;
+    left: -19px;
+}
+
+.image-model__name {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #373c46;
+}
+
+.image-model__size {
+    font-size: 1.4rem;
+    color: #7c869b;
+    margin-top: 12px;
+}
+
+.image-model__button {
+    border-radius: 2px;
+    background: #6c63ff;
+    color: #ffffff;
+    fill: #ffffff;
+    border: none;
+    outline: none;
+    display: flex;
+    padding: 12px 9px;
+    cursor: pointer;
+}
+.image-model__button span {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    margin-left: 7px;
+    display: inline-block;
+}
+
+.image-model a {
+    text-decoration: none;
+}.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs li {
+    width: 100%;
+}
+
+.tab {
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1;
+    padding: 16px 0;
+    color: #9da6b8;
+    fill: #9da6b8;
+    cursor: pointer;
+    width: 100%
+}
+
+.tab > div {
+    position: relative;
+    display: inline-block;
+}
+
+.tab > div:after {
+    position: absolute;
+    content: ' ';
+    left: 2px;
+    right: 2px;
+    bottom: -8px;
+}
+
+.tab__active > div:after {
+    border-bottom: 2px solid #6c63ff;
+}
+
+.tab:hover {
+    background-color: rgba(243, 245, 249, 0.5);
+}
+
+.tab svg {
+    min-height: 16px;
+}
+
+.tab__active {
+    color: #6c63ff;
+    fill: #6c63ff;
+}
+
+.inspector__tab--padding {
+    padding: 10px 19px;
+}.genera-tab__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.assets-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.asset {
+    width: 50%;
+    padding-bottom: 50%;
+    overflow: hidden;
+    margin:0;
+    position: relative;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="2" height="2" fill="#ffffff"/><rect x="1" y="0" width="1" height="1" fill="#f6f6f6"/><rect x="0" y="1" width="1" height="1" fill="#f6f6f6"/></svg>');
+    background-size: 10px;
+    will-change: transform;
+}
+
+.asset--properties {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.asset--image {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.asset:hover .asset--properties {
+    opacity: 1;
+}
+.asset:hover .asset--download {
+    transform: translateY(0);
+}
+
+.asset:hover .asset--description {
+    transform: translateY(0);
+}
+
+.asset--download {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background: #7d808e;
+    text-decoration: none;
+    color: white;
+    fill: white;
+    font-weight: bold;
+    border-radius: 50px;
+    left: 6px;
+    top: 6px;
+    padding: 2px 10px;
+    transform: translateY(-30px);
+    transition: all 0.5s;
+}
+
+.asset--download:hover {
+    fill: #6c63ff;
+    color: #373c46;
+    background: white;
+}
+
+.asset--download > *:first-child {
+    margin-right: 5px;
+}
+
+.asset__download > span {
+    transform: translateY(1px);
+}
+
+.asset--description {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6px;
+    background: rgba(0,0,0,0.5);
+    transform: translateY(100%);
+    transition: all 0.5s;
+}
+
+
+.asset--description__name {
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+}
+
+.asset--description__size {
+    color: #a7aaae;
+}
+
+.download-assets {
+    position: absolute;
+    font-weight: bold;
+    color: #6c63ff;
+    text-transform: none;
+    top: 20px;
+    cursor: pointer;
+}.tooltip--wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s;
+    color: #c6d0e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-150%);
+    pointer-events: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.tooltip--content {
+    border-radius: 2px;
+    padding: 6px 9px;
+    background-color: #373c46;
+    box-shadow: 0 4px 8px 0 rgba(44, 48, 59, 0.3);
+    text-transform: uppercase;
+}
+
+.tooltip--wrapper:hover > .tooltip{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.tooltip:after {
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #373c46;
+}.notification--wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 100000;
+}
+
+.notification {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.5s;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100px;
+}
+
+.notification__show {
+    opacity: 1;
+}
+
+.notification--content {
+    padding: 9px 10px;
+    border-radius: 1px;
+    background: #373c46;
+    color: #c6d0e4;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 9px 0 rgba(44, 48, 59, 0.6);
+}
+
+.notification__show .notification--content {
+    transform: translateY(10px);
+}</style><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script>var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-89379171-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = 'https://ssl.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script></head><body><div data-reactroot=""><div class="inspector"><div class="header"><div class="download-assets">Export All</div><h3>Assets</h3><div class="header__close"><div class="tooltip--wrapper"><div class="tooltip"><div class="tooltip--content">Quit</div></div><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-350.000000, -272.000000)" fill-rule="nonzero">
+            <path d="M356.414214,277 L359.707107,273.707107 C360.097631,273.316582 360.097631,272.683418 359.707107,272.292893 C359.316582,271.902369 358.683418,271.902369 358.292893,272.292893 L355,275.585786 L351.707107,272.292893 C351.316582,271.902369 350.683418,271.902369 350.292893,272.292893 C349.902369,272.683418 349.902369,273.316582 350.292893,273.707107 L353.585786,277 L350.292893,280.292893 C349.902369,280.683418 349.902369,281.316582 350.292893,281.707107 C350.683418,282.097631 351.316582,282.097631 351.707107,281.707107 L355,278.414214 L358.292893,281.707107 C358.683418,282.097631 359.316582,282.097631 359.707107,281.707107 C360.097631,281.316582 360.097631,280.683418 359.707107,280.292893 L356.414214,277 Z" id="close-ico"></path>
+        </g>
+    </g>
+</svg></div></div></div></div><div class="notification--wrapper"><div class="notification "><div class="notification--content"></div></div></div><div class="inspector__main_content_wrapper"><section><div><div class="inspector__content inspector__content--small"><div><div class="assets-container"><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/logo-lays.png?v=2" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/logo-lays.png?v=2" download="logo-lays.png?v=2" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="logo-lays.png?v=2">logo-lays.png?v=2</h3><span class="asset--description__size"><!-- react-text: 1418 -->184<!-- /react-text --><!-- react-text: 1419 --> x <!-- /react-text --><!-- react-text: 1420 -->184<!-- /react-text --><!-- react-text: 1421 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2019-09/CheddarSC_0.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2019-09/CheddarSC_0.png" download="CheddarSC_0.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="CheddarSC_0.png">CheddarSC_0.png</h3><span class="asset--description__size"><!-- react-text: 1431 -->335<!-- /react-text --><!-- react-text: 1432 --> x <!-- /react-text --><!-- react-text: 1433 -->335<!-- /react-text --><!-- react-text: 1434 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2019-09/Lightly%20Salted%20Classic.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2019-09/Lightly%20Salted%20Classic.png" download="Lightly Salted Classic.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="Lightly Salted Classic.png">Lightly Salted Classic.png</h3><span class="asset--description__size"><!-- react-text: 1444 -->335<!-- /react-text --><!-- react-text: 1445 --> x <!-- /react-text --><!-- react-text: 1446 -->335<!-- /react-text --><!-- react-text: 1447 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2021-07/HERO_Smooth%20Ranch%20Dip.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2021-07/HERO_Smooth%20Ranch%20Dip.png" download="HERO_Smooth Ranch Dip.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="HERO_Smooth Ranch Dip.png">HERO_Smooth Ranch Dip.png</h3><span class="asset--description__size"><!-- react-text: 1457 -->1000<!-- /react-text --><!-- react-text: 1458 --> x <!-- /react-text --><!-- react-text: 1459 -->1000<!-- /react-text --><!-- react-text: 1460 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2021-07/XL%20LKC%20Jalapeno%20copy_0.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2021-07/XL%20LKC%20Jalapeno%20copy_0.png" download="XL LKC Jalapeno copy_0.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="XL LKC Jalapeno copy_0.png">XL LKC Jalapeno copy_0.png</h3><span class="asset--description__size"><!-- react-text: 1470 -->1000<!-- /react-text --><!-- react-text: 1471 --> x <!-- /react-text --><!-- react-text: 1472 -->1000<!-- /react-text --><!-- react-text: 1473 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2022-01/350x350px-banner_0.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2022-01/350x350px-banner_0.png" download="350x350px-banner_0.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="350x350px-banner_0.png">350x350px-banner_0.png</h3><span class="asset--description__size"><!-- react-text: 1483 -->335<!-- /react-text --><!-- react-text: 1484 --> x <!-- /react-text --><!-- react-text: 1485 -->335<!-- /react-text --><!-- react-text: 1486 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2021-07/XL%20Poppables%20Sea%20Salt%20copy.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2021-07/XL%20Poppables%20Sea%20Salt%20copy.png" download="XL Poppables Sea Salt copy.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="XL Poppables Sea Salt copy.png">XL Poppables Sea Salt copy.png</h3><span class="asset--description__size"><!-- react-text: 1496 -->1000<!-- /react-text --><!-- react-text: 1497 --> x <!-- /react-text --><!-- react-text: 1498 -->1000<!-- /react-text --><!-- react-text: 1499 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2021-07/Stax%20SCO.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2021-07/Stax%20SCO.png" download="Stax SCO.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="Stax SCO.png">Stax SCO.png</h3><span class="asset--description__size"><!-- react-text: 1509 -->1000<!-- /react-text --><!-- react-text: 1510 --> x <!-- /react-text --><!-- react-text: 1511 -->1000<!-- /react-text --><!-- react-text: 1512 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2019-09/Wavy%20Original_0.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2019-09/Wavy%20Original_0.png" download="Wavy Original_0.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="Wavy Original_0.png">Wavy Original_0.png</h3><span class="asset--description__size"><!-- react-text: 1522 -->335<!-- /react-text --><!-- react-text: 1523 --> x <!-- /react-text --><!-- react-text: 1524 -->335<!-- /react-text --><!-- react-text: 1525 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2022-03/23E0CD5A-AA82-46B5-8EFF-B507BF55B471%20copia2.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2022-03/23E0CD5A-AA82-46B5-8EFF-B507BF55B471%20copia2.png" download="23E0CD5A-AA82-46B5-8EFF-B507BF55B471 copia2.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="23E0CD5A-AA82-46B5-8EFF-B507BF55B471 copia2.png">23E0CD5A-AA82-46B5-8EFF-B507BF55B471 copia2.png</h3><span class="asset--description__size"><!-- react-text: 1535 -->1000<!-- /react-text --><!-- react-text: 1536 --> x <!-- /react-text --><!-- react-text: 1537 -->1000<!-- /react-text --><!-- react-text: 1538 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2022-07/1%20Lays%20option%201%20generic%20banner%5B23%5D%20%281%29%202.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2022-07/1%20Lays%20option%201%20generic%20banner%5B23%5D%20%281%29%202.png" download="1 Lays option 1 generic banner[23] (1) 2.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="1 Lays option 1 generic banner[23] (1) 2.png">1 Lays option 1 generic banner[23] (1) 2.png</h3><span class="asset--description__size"><!-- react-text: 1548 -->1970<!-- /react-text --><!-- react-text: 1549 --> x <!-- /react-text --><!-- react-text: 1550 -->715<!-- /react-text --><!-- react-text: 1551 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/2022-07/0%20mobile%20lays.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/2022-07/0%20mobile%20lays.png" download="0 mobile lays.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="0 mobile lays.png">0 mobile lays.png</h3><span class="asset--description__size"><!-- react-text: 1561 -->750<!-- /react-text --><!-- react-text: 1562 --> x <!-- /react-text --><!-- react-text: 1563 -->960<!-- /react-text --><!-- react-text: 1564 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/LAY_SpicyFriedChickySammy_TWITTER.jpg?itok=aXVKCCyb" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/LAY_SpicyFriedChickySammy_TWITTER.jpg?itok=aXVKCCyb" download="LAY_SpicyFriedChickySammy_TWITTER.jpg?itok=aXVKCCyb" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="LAY_SpicyFriedChickySammy_TWITTER.jpg?itok=aXVKCCyb">LAY_SpicyFriedChickySammy_TWITTER.jpg?itok=aXVKCCyb</h3><span class="asset--description__size"><!-- react-text: 1574 -->314<!-- /react-text --><!-- react-text: 1575 --> x <!-- /react-text --><!-- react-text: 1576 -->280<!-- /react-text --><!-- react-text: 1577 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2020-11/Lays-Cheesy-Hashbrown-Casserole.jpg?itok=cvMFFUsu" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2020-11/Lays-Cheesy-Hashbrown-Casserole.jpg?itok=cvMFFUsu" download="Lays-Cheesy-Hashbrown-Casserole.jpg?itok=cvMFFUsu" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="Lays-Cheesy-Hashbrown-Casserole.jpg?itok=cvMFFUsu">Lays-Cheesy-Hashbrown-Casserole.jpg?itok=cvMFFUsu</h3><span class="asset--description__size"><!-- react-text: 1587 -->314<!-- /react-text --><!-- react-text: 1588 --> x <!-- /react-text --><!-- react-text: 1589 -->280<!-- /react-text --><!-- react-text: 1590 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2020-11/LAYS-TENDIES-big.jpg?itok=HJMaG96W" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2020-11/LAYS-TENDIES-big.jpg?itok=HJMaG96W" download="LAYS-TENDIES-big.jpg?itok=HJMaG96W" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="LAYS-TENDIES-big.jpg?itok=HJMaG96W">LAYS-TENDIES-big.jpg?itok=HJMaG96W</h3><span class="asset--description__size"><!-- react-text: 1600 -->314<!-- /react-text --><!-- react-text: 1601 --> x <!-- /react-text --><!-- react-text: 1602 -->280<!-- /react-text --><!-- react-text: 1603 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2021-12/LAY%27S%20CRUSTED%20HOLIDAY%20BROWNIE-032_1920x625.png?itok=ms96bC5q" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2021-12/LAY%27S%20CRUSTED%20HOLIDAY%20BROWNIE-032_1920x625.png?itok=ms96bC5q" download="LAY&#39;S CRUSTED HOLIDAY BROWNIE-032_1920x625.png?itok=ms96bC5q" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="LAY&#39;S CRUSTED HOLIDAY BROWNIE-032_1920x625.png?itok=ms96bC5q">LAY'S CRUSTED HOLIDAY BROWNIE-032_1920x625.png?itok=ms96bC5q</h3><span class="asset--description__size"><!-- react-text: 1613 -->314<!-- /react-text --><!-- react-text: 1614 --> x <!-- /react-text --><!-- react-text: 1615 -->280<!-- /react-text --><!-- react-text: 1616 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2021-12/LAY%E2%80%99S%20POTATO%20CHIP%20MAGIC%20BARS-023_1920x625.png?itok=wzXEYCdj" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/recipe_thumbnail/public/2021-12/LAY%E2%80%99S%20POTATO%20CHIP%20MAGIC%20BARS-023_1920x625.png?itok=wzXEYCdj" download="LAY’S POTATO CHIP MAGIC BARS-023_1920x625.png?itok=wzXEYCdj" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="LAY’S POTATO CHIP MAGIC BARS-023_1920x625.png?itok=wzXEYCdj">LAY’S POTATO CHIP MAGIC BARS-023_1920x625.png?itok=wzXEYCdj</h3><span class="asset--description__size"><!-- react-text: 1626 -->314<!-- /react-text --><!-- react-text: 1627 --> x <!-- /react-text --><!-- react-text: 1628 -->280<!-- /react-text --><!-- react-text: 1629 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/play-icon.png?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/play-icon.png?1" download="play-icon.png?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="play-icon.png?1">play-icon.png?1</h3><span class="asset--description__size"><!-- react-text: 1639 -->64<!-- /react-text --><!-- react-text: 1640 --> x <!-- /react-text --><!-- react-text: 1641 -->48<!-- /react-text --><!-- react-text: 1642 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-contactus-en.jpg?3" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-contactus-en.jpg?3" download="bg-contactus-en.jpg?3" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-contactus-en.jpg?3">bg-contactus-en.jpg?3</h3><span class="asset--description__size"><!-- react-text: 1652 -->1170<!-- /react-text --><!-- react-text: 1653 --> x <!-- /react-text --><!-- react-text: 1654 -->174<!-- /react-text --><!-- react-text: 1655 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-contactus-mobile-en.jpg?3" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-contactus-mobile-en.jpg?3" download="bg-contactus-mobile-en.jpg?3" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-contactus-mobile-en.jpg?3">bg-contactus-mobile-en.jpg?3</h3><span class="asset--description__size"><!-- react-text: 1665 -->1014<!-- /react-text --><!-- react-text: 1666 --> x <!-- /react-text --><!-- react-text: 1667 -->504<!-- /react-text --><!-- react-text: 1668 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/icon-facebook.png?2" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/icon-facebook.png?2" download="icon-facebook.png?2" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="icon-facebook.png?2">icon-facebook.png?2</h3><span class="asset--description__size"><!-- react-text: 1678 -->94<!-- /react-text --><!-- react-text: 1679 --> x <!-- /react-text --><!-- react-text: 1680 -->94<!-- /react-text --><!-- react-text: 1681 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/icon-twitter.png?2" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/icon-twitter.png?2" download="icon-twitter.png?2" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="icon-twitter.png?2">icon-twitter.png?2</h3><span class="asset--description__size"><!-- react-text: 1691 -->94<!-- /react-text --><!-- react-text: 1692 --> x <!-- /react-text --><!-- react-text: 1693 -->94<!-- /react-text --><!-- react-text: 1694 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/icon-instagram.png?2" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/icon-instagram.png?2" download="icon-instagram.png?2" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="icon-instagram.png?2">icon-instagram.png?2</h3><span class="asset--description__size"><!-- react-text: 1704 -->94<!-- /react-text --><!-- react-text: 1705 --> x <!-- /react-text --><!-- react-text: 1706 -->94<!-- /react-text --><!-- react-text: 1707 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/icon-youtube.png?2" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/icon-youtube.png?2" download="icon-youtube.png?2" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="icon-youtube.png?2">icon-youtube.png?2</h3><span class="asset--description__size"><!-- react-text: 1717 -->94<!-- /react-text --><!-- react-text: 1718 --> x <!-- /react-text --><!-- react-text: 1719 -->94<!-- /react-text --><!-- react-text: 1720 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://s.amazon-adsystem.com/iui3?d=forester-did&amp;ex-fargs=%3Fid%3D217c1ea4-5333-e27c-ca4f-bf813ff798c0%26type%3D55%26m%3D1&amp;ex-fch=416613&amp;ex-src=https://www.lays.com&amp;ex-hargs=v%3D1.0%3Bc%3D2267642936482%3Bp%3D217C1EA4-5333-E27C-CA4F-BF813FF798C0" class="asset--image"><figcaption class="asset--properties"><a href="https://s.amazon-adsystem.com/iui3?d=forester-did&amp;ex-fargs=%3Fid%3D217c1ea4-5333-e27c-ca4f-bf813ff798c0%26type%3D55%26m%3D1&amp;ex-fch=416613&amp;ex-src=https://www.lays.com&amp;ex-hargs=v%3D1.0%3Bc%3D2267642936482%3Bp%3D217C1EA4-5333-E27C-CA4F-BF813FF798C0" download="www.lays.com&amp;ex-hargs=v=1.0;c=2267642936482;p=217C1EA4-5333-E27C-CA4F-BF813FF798C0" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="www.lays.com&amp;ex-hargs=v=1.0;c=2267642936482;p=217C1EA4-5333-E27C-CA4F-BF813FF798C0">www.lays.com&amp;ex-hargs=v=1.0;c=2267642936482;p=217C1EA4-5333-E27C-CA4F-BF813FF798C0</h3><span class="asset--description__size"><!-- react-text: 1730 -->1<!-- /react-text --><!-- react-text: 1731 --> x <!-- /react-text --><!-- react-text: 1732 -->1<!-- /react-text --><!-- react-text: 1733 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/search-icon-mobile.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/search-icon-mobile.png" download="search-icon-mobile.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="search-icon-mobile.png">search-icon-mobile.png</h3><span class="asset--description__size"><!-- react-text: 1743 -->24px<!-- /react-text --><!-- react-text: 1744 --> x <!-- /react-text --><!-- react-text: 1745 -->24px<!-- /react-text --><!-- react-text: 1746 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/sprite-icons.png?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/sprite-icons.png?1" download="sprite-icons.png?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="sprite-icons.png?1">sprite-icons.png?1</h3><span class="asset--description__size"><!-- react-text: 1756 -->32px<!-- /react-text --><!-- react-text: 1757 --> x <!-- /react-text --><!-- react-text: 1758 -->32px<!-- /react-text --><!-- react-text: 1759 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/search-icon.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/search-icon.png" download="search-icon.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="search-icon.png">search-icon.png</h3><span class="asset--description__size"><!-- react-text: 1769 -->23<!-- /react-text --><!-- react-text: 1770 --> x <!-- /react-text --><!-- react-text: 1771 -->24<!-- /react-text --><!-- react-text: 1772 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-products.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-products2.jpg?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-products.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-products2.jpg?1" download="bg-products2.jpg?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-products2.jpg?1">bg-products2.jpg?1</h3><span class="asset--description__size"><!-- react-text: 1782 -->1170px<!-- /react-text --><!-- react-text: 1783 --> x <!-- /react-text --><!-- react-text: 1784 -->771px<!-- /react-text --><!-- react-text: 1785 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/left-arrow.svg?v4" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/left-arrow.svg?v4" download="left-arrow.svg?v4" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="left-arrow.svg?v4">left-arrow.svg?v4</h3><span class="asset--description__size"><!-- react-text: 1795 -->512<!-- /react-text --><!-- react-text: 1796 --> x <!-- /react-text --><!-- react-text: 1797 -->512<!-- /react-text --><!-- react-text: 1798 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/right-arrow.svg?v4" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/right-arrow.svg?v4" download="right-arrow.svg?v4" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="right-arrow.svg?v4">right-arrow.svg?v4</h3><span class="asset--description__size"><!-- react-text: 1808 -->512<!-- /react-text --><!-- react-text: 1809 --> x <!-- /react-text --><!-- react-text: 1810 -->512<!-- /react-text --><!-- react-text: 1811 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-recipes2.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-recipes3.jpg?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-recipes2.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-recipes3.jpg?1" download="bg-recipes3.jpg?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-recipes3.jpg?1">bg-recipes3.jpg?1</h3><span class="asset--description__size"><!-- react-text: 1821 -->1170px<!-- /react-text --><!-- react-text: 1822 --> x <!-- /react-text --><!-- react-text: 1823 -->726px<!-- /react-text --><!-- react-text: 1824 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-videos.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-videos2.jpg?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-videos.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-videos2.jpg?1" download="bg-videos2.jpg?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-videos2.jpg?1">bg-videos2.jpg?1</h3><span class="asset--description__size"><!-- react-text: 1834 -->1170px<!-- /react-text --><!-- react-text: 1835 --> x <!-- /react-text --><!-- react-text: 1836 -->638px<!-- /react-text --><!-- react-text: 1837 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://i3.ytimg.com/vi/MjsyvfVzO_U/maxresdefault.jpg" class="asset--image"><figcaption class="asset--properties"><a href="https://i3.ytimg.com/vi/MjsyvfVzO_U/maxresdefault.jpg" download="maxresdefault.jpg" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="maxresdefault.jpg">maxresdefault.jpg</h3><span class="asset--description__size"><!-- react-text: 1847 -->1280<!-- /react-text --><!-- react-text: 1848 --> x <!-- /react-text --><!-- react-text: 1849 -->720<!-- /react-text --><!-- react-text: 1850 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://i3.ytimg.com/vi/VMQkzBtGl5U/maxresdefault.jpg" class="asset--image"><figcaption class="asset--properties"><a href="https://i3.ytimg.com/vi/VMQkzBtGl5U/maxresdefault.jpg" download="maxresdefault.jpg" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="maxresdefault.jpg">maxresdefault.jpg</h3><span class="asset--description__size"><!-- react-text: 1860 -->1280<!-- /react-text --><!-- react-text: 1861 --> x <!-- /react-text --><!-- react-text: 1862 -->720<!-- /react-text --><!-- react-text: 1863 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://i3.ytimg.com/vi/fpmVYApkB7M/maxresdefault.jpg" class="asset--image"><figcaption class="asset--properties"><a href="https://i3.ytimg.com/vi/fpmVYApkB7M/maxresdefault.jpg" download="maxresdefault.jpg" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="maxresdefault.jpg">maxresdefault.jpg</h3><span class="asset--description__size"><!-- react-text: 1873 -->1280<!-- /react-text --><!-- react-text: 1874 --> x <!-- /react-text --><!-- react-text: 1875 -->720<!-- /react-text --><!-- react-text: 1876 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/bg-social.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-social2.jpg?1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/bg-social.jpg?1%22),%20url(%22https://www.lays.com/sites/lays.com/themes/lays/img/bg-social2.jpg?1" download="bg-social2.jpg?1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="bg-social2.jpg?1">bg-social2.jpg?1</h3><span class="asset--description__size"><!-- react-text: 1886 -->1170px<!-- /react-text --><!-- react-text: 1887 --> x <!-- /react-text --><!-- react-text: 1888 -->575px<!-- /react-text --><!-- react-text: 1889 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/themes/lays/img/icon_instagram.png" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/themes/lays/img/icon_instagram.png" download="icon_instagram.png" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="icon_instagram.png">icon_instagram.png</h3><span class="asset--description__size"><!-- react-text: 1899 -->128<!-- /react-text --><!-- react-text: 1900 --> x <!-- /react-text --><!-- react-text: 1901 -->128<!-- /react-text --><!-- react-text: 1902 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/socialfeed_instagram_2937399595884300805.jpg" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/socialfeed_instagram_2937399595884300805.jpg" download="socialfeed_instagram_2937399595884300805.jpg" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2937399595884300805.jpg">socialfeed_instagram_2937399595884300805.jpg</h3><span class="asset--description__size"><!-- react-text: 1912 -->720<!-- /react-text --><!-- react-text: 1913 --> x <!-- /react-text --><!-- react-text: 1914 -->900<!-- /react-text --><!-- react-text: 1915 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2936746991048593347.jpg?itok=gtxFIIh1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2936746991048593347.jpg?itok=gtxFIIh1" download="socialfeed_instagram_2936746991048593347.jpg?itok=gtxFIIh1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2936746991048593347.jpg?itok=gtxFIIh1">socialfeed_instagram_2936746991048593347.jpg?itok=gtxFIIh1</h3><span class="asset--description__size"><!-- react-text: 1925 -->480<!-- /react-text --><!-- react-text: 1926 --> x <!-- /react-text --><!-- react-text: 1927 -->480<!-- /react-text --><!-- react-text: 1928 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2933805813483891797.jpg?itok=7xLtuCl1" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2933805813483891797.jpg?itok=7xLtuCl1" download="socialfeed_instagram_2933805813483891797.jpg?itok=7xLtuCl1" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2933805813483891797.jpg?itok=7xLtuCl1">socialfeed_instagram_2933805813483891797.jpg?itok=7xLtuCl1</h3><span class="asset--description__size"><!-- react-text: 1938 -->384<!-- /react-text --><!-- react-text: 1939 --> x <!-- /react-text --><!-- react-text: 1940 -->480<!-- /react-text --><!-- react-text: 1941 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2933122481342777842.jpg?itok=PIGi-lCl" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2933122481342777842.jpg?itok=PIGi-lCl" download="socialfeed_instagram_2933122481342777842.jpg?itok=PIGi-lCl" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2933122481342777842.jpg?itok=PIGi-lCl">socialfeed_instagram_2933122481342777842.jpg?itok=PIGi-lCl</h3><span class="asset--description__size"><!-- react-text: 1951 -->384<!-- /react-text --><!-- react-text: 1952 --> x <!-- /react-text --><!-- react-text: 1953 -->480<!-- /react-text --><!-- react-text: 1954 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2931729820729590288.jpg?itok=y9kHx8mG" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/styles/large/public/socialfeed_instagram_2931729820729590288.jpg?itok=y9kHx8mG" download="socialfeed_instagram_2931729820729590288.jpg?itok=y9kHx8mG" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2931729820729590288.jpg?itok=y9kHx8mG">socialfeed_instagram_2931729820729590288.jpg?itok=y9kHx8mG</h3><span class="asset--description__size"><!-- react-text: 1964 -->270<!-- /react-text --><!-- react-text: 1965 --> x <!-- /react-text --><!-- react-text: 1966 -->480<!-- /react-text --><!-- react-text: 1967 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="https://www.lays.com/sites/lays.com/files/socialfeed_instagram_2930924751459697730.jpg" class="asset--image"><figcaption class="asset--properties"><a href="https://www.lays.com/sites/lays.com/files/socialfeed_instagram_2930924751459697730.jpg" download="socialfeed_instagram_2930924751459697730.jpg" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="socialfeed_instagram_2930924751459697730.jpg">socialfeed_instagram_2930924751459697730.jpg</h3><span class="asset--description__size"><!-- react-text: 1977 -->1080<!-- /react-text --><!-- react-text: 1978 --> x <!-- /react-text --><!-- react-text: 1979 -->1920<!-- /react-text --><!-- react-text: 1980 --> px<!-- /react-text --></span></div></figcaption></figure><figure class="asset"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjguMzg2IiBoZWlnaHQ9IjI1NS45MzgiIHZpZXdCb3g9IjAgMCAyNjguMzg2IDI1NS45MzgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjQ1MikiPgo8cGF0aCBkYXRhLW5hbWU9IlBhdGggMTAyNyIgZD0iTTE0MC41MzksNC42NjhsMzQuMTM4LDgwLjgsODcuNCw3LjUwOEE2Ljg5MSw2Ljg5MSwwLDAsMSwyNjYsMTA1LjA0NGwtNjYuMjkzLDU3LjQzNSwxOS44NjYsODUuNDQyYTYuODgyLDYuODgyLDAsMCwxLTEwLjI2NCw3LjQ1M2wtNzUuMTEtNDUuMy03NS4xMSw0NS4zYTYuODg1LDYuODg1LDAsMCwxLTEwLjI2NC03LjQ1M2wxOS44NjYtODUuNDQyTDIuMzg3LDEwNS4wM0E2Ljg4OCw2Ljg4OCwwLDAsMSw2LjMxMyw5Mi45NjJsODcuNC03LjUwOEwxMjcuODUsNC42NjhhNi44ODEsNi44ODEsMCwwLDEsMTIuNjg4LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+CjwvZz4KPC9zdmc+" class="asset--image"><figcaption class="asset--properties"><a href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjguMzg2IiBoZWlnaHQ9IjI1NS45MzgiIHZpZXdCb3g9IjAgMCAyNjguMzg2IDI1NS45MzgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjQ1MikiPgo8cGF0aCBkYXRhLW5hbWU9IlBhdGggMTAyNyIgZD0iTTE0MC41MzksNC42NjhsMzQuMTM4LDgwLjgsODcuNCw3LjUwOEE2Ljg5MSw2Ljg5MSwwLDAsMSwyNjYsMTA1LjA0NGwtNjYuMjkzLDU3LjQzNSwxOS44NjYsODUuNDQyYTYuODgyLDYuODgyLDAsMCwxLTEwLjI2NCw3LjQ1M2wtNzUuMTEtNDUuMy03NS4xMSw0NS4zYTYuODg1LDYuODg1LDAsMCwxLTEwLjI2NC03LjQ1M2wxOS44NjYtODUuNDQyTDIuMzg3LDEwNS4wM0E2Ljg4OCw2Ljg4OCwwLDAsMSw2LjMxMyw5Mi45NjJsODcuNC03LjUwOEwxMjcuODUsNC42NjhhNi44ODEsNi44ODEsMCwwLDEsMTIuNjg4LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+CjwvZz4KPC9zdmc+" download="svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjguMzg2IiBoZWlnaHQ9IjI1NS45MzgiIHZpZXdCb3g9IjAgMCAyNjguMzg2IDI1NS45MzgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjQ1MikiPgo8cGF0aCBkYXRhLW5hbWU9IlBhdGggMTAyNyIgZD0iTTE0MC41MzksNC42NjhsMzQuMTM4LDgwLjgsODcuNCw3LjUwOEE2Ljg5MSw2Ljg5MSwwLDAsMSwyNjYsMTA1LjA0NGwtNjYuMjkzLDU3LjQzNSwxOS44NjYsODUuNDQyYTYuODgyLDYuODgyLDAsMCwxLTEwLjI2NCw3LjQ1M2wtNzUuMTEtNDUuMy03NS4xMSw0NS4zYTYuODg1LDYuODg1LDAsMCwxLTEwLjI2NC03LjQ1M2wxOS44NjYtODUuNDQyTDIuMzg3LDEwNS4wM0E2Ljg4OCw2Ljg4OCwwLDAsMSw2LjMxMyw5Mi45NjJsODcuNC03LjUwOEwxMjcuODUsNC42NjhhNi44ODEsNi44ODEsMCwwLDEsMTIuNjg4LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+CjwvZz4KPC9zdmc+" class="asset--download"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -353.000000)">
+            <path d="M274.25,365 L269,359 L272,359 L272,356 L276.5,356 L276.5,359 L279.5,359 L274.25,365 Z M272,353 L276.5,353 L276.5,354.5 L272,354.5 L272,353 Z" id="asset-download-icon"></path>
+        </g>
+    </g>
+</svg></div><span>EXPORT</span></a><div class="asset--description"><h3 class="asset--description__name" title="svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjguMzg2IiBoZWlnaHQ9IjI1NS45MzgiIHZpZXdCb3g9IjAgMCAyNjguMzg2IDI1NS45MzgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjQ1MikiPgo8cGF0aCBkYXRhLW5hbWU9IlBhdGggMTAyNyIgZD0iTTE0MC41MzksNC42NjhsMzQuMTM4LDgwLjgsODcuNCw3LjUwOEE2Ljg5MSw2Ljg5MSwwLDAsMSwyNjYsMTA1LjA0NGwtNjYuMjkzLDU3LjQzNSwxOS44NjYsODUuNDQyYTYuODgyLDYuODgyLDAsMCwxLTEwLjI2NCw3LjQ1M2wtNzUuMTEtNDUuMy03NS4xMSw0NS4zYTYuODg1LDYuODg1LDAsMCwxLTEwLjI2NC03LjQ1M2wxOS44NjYtODUuNDQyTDIuMzg3LDEwNS4wM0E2Ljg4OCw2Ljg4OCwwLDAsMSw2LjMxMyw5Mi45NjJsODcuNC03LjUwOEwxMjcuODUsNC42NjhhNi44ODEsNi44ODEsMCwwLDEsMTIuNjg4LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+CjwvZz4KPC9zdmc+">svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjguMzg2IiBoZWlnaHQ9IjI1NS45MzgiIHZpZXdCb3g9IjAgMCAyNjguMzg2IDI1NS45MzgiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjQ1MikiPgo8cGF0aCBkYXRhLW5hbWU9IlBhdGggMTAyNyIgZD0iTTE0MC41MzksNC42NjhsMzQuMTM4LDgwLjgsODcuNCw3LjUwOEE2Ljg5MSw2Ljg5MSwwLDAsMSwyNjYsMTA1LjA0NGwtNjYuMjkzLDU3LjQzNSwxOS44NjYsODUuNDQyYTYuODgyLDYuODgyLDAsMCwxLTEwLjI2NCw3LjQ1M2wtNzUuMTEtNDUuMy03NS4xMSw0NS4zYTYuODg1LDYuODg1LDAsMCwxLTEwLjI2NC03LjQ1M2wxOS44NjYtODUuNDQyTDIuMzg3LDEwNS4wM0E2Ljg4OCw2Ljg4OCwwLDAsMSw2LjMxMyw5Mi45NjJsODcuNC03LjUwOEwxMjcuODUsNC42NjhhNi44ODEsNi44ODEsMCwwLDEsMTIuNjg4LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+CjwvZz4KPC9zdmc+</h3><span class="asset--description__size"><!-- react-text: 1990 -->22px<!-- /react-text --><!-- react-text: 1991 --> x <!-- /react-text --><!-- react-text: 1992 -->22px<!-- /react-text --><!-- react-text: 1993 --> px<!-- /react-text --></span></div></figcaption></figure></div></div></div><ul class="tabs"><li><div class="tooltip--wrapper"><div class="tooltip"><div class="tooltip--content">General</div></div><div class="tab"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-425.000000, -192.000000)" fill-rule="nonzero">
+            <path d="M439.0625,192 C439.625,192 440,192.375 440,192.9375 L440,194.8125 C440,195.375 439.625,195.75 439.0625,195.75 L425.9375,195.75 C425.375,195.75 425,195.375 425,194.8125 L425,192.9375 C425,192.375 425.375,192 425.9375,192 L439.0625,192 Z M427.8125,197.625 C428.375,197.625 428.75,198 428.75,198.5625 L428.75,206.0625 C428.75,206.625 428.375,207 427.8125,207 L425.9375,207 C425.375,207 425,206.625 425,206.0625 L425,198.5625 C425,198 425.375,197.625 425.9375,197.625 L427.8125,197.625 Z M439.0625,197.625 C439.625,197.625 440,198 440,198.5625 L440,206.0625 C440,206.625 439.625,207 439.0625,207 L431.5625,207 C431,207 430.625,206.625 430.625,206.0625 L430.625,198.5625 C430.625,198 431,197.625 431.5625,197.625 L439.0625,197.625 Z" id="general-ico"></path>
+        </g>
+    </g>
+</svg></div></div></div></li><li><div class="tooltip--wrapper"><div class="tooltip"><div class="tooltip--content">Colors</div></div><div class="tab"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-349.000000, -192.000000)">
+            <path d="M355,208 C357.9,208 361,205.8 361,202 C361,198.5 355,192 355,192 C355,192 349,198.5 349,202 C349,205.8 352.1,208 355,208 Z" id="colors-ico"></path>
+        </g>
+    </g>
+</svg></div></div></div></li><li><div class="tooltip--wrapper"><div class="tooltip"><div class="tooltip--content">Assets</div></div><div class="tab tab__active"><div><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="CSS-Peeper-2.0" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="csspeeper-icons" transform="translate(-269.000000, -192.000000)">
+            <path d="M284,195 L281.5,195 L279.8,192.4 C279.6,192.2 279.3,192 279,192 L275,192 C274.7,192 274.4,192.2 274.2,192.4 L272.5,195 L270,195 C269.4,195 269,195.4 269,196 L269,205 C269,205.6 269.4,206 270,206 L284,206 C284.6,206 285,205.6 285,205 L285,196 C285,195.4 284.6,195 284,195 Z M277,203 C275.3,203 274,201.7 274,200 C274,198.3 275.3,197 277,197 C278.7,197 280,198.3 280,200 C280,201.7 278.7,203 277,203 Z" id="assets-ico"></path>
+        </g>
+    </g>
+</svg></div></div></div></li></ul></div></section><!-- react-text: 2013 --><!-- /react-text --></div></div></div></body></html>

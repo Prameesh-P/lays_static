@@ -1,0 +1,78 @@
+body{
+    width: 100%;
+    margin: 0%;
+   }
+.main{
+   
+    margin-top: -86px;
+    width: 100%;
+    background-color:rgb(251,182,23);
+}
+.head {
+    width: 78%;
+    height: 120px;
+    background: #ffe600;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 211px;
+    top: 40px;
+}
+.logo-lays{
+    height: 110px; 
+    margin-top: 7px;
+    margin-left: 30px ;
+}
+.pro{
+    text-decoration: none;
+    padding-left: 45px;
+    color: black;
+    position: relative;
+    top: -47px;
+    font-size: 24px;
+    left: 170px;
+    font-weight:900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.firstbtn{
+    background: none;
+    position: relative;
+    left: 190px;
+    top: -50px;
+    height: 40px;
+    width: 44px;
+    border:1px solid ;
+    font-weight: 900;
+    font-size: 20px;
+    
+}
+.search{
+    position: relative;
+    padding-left: 210px;
+    top: -42px;
+    width: 30px;
+}
+.products{
+    color:white;
+    font-size: 129px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    padding-left: 110px;
+    padding-top: 50px;
+}
+.productdiv{
+    width: 100%;
+    height: 150px;
+}
+.innerproS2{
+    width: 800px;
+    height: 500px;
+    background: red;
+    margin-top: 350px;
+    margin-left: -1400px;
+}
+.divs2{
+    width: 800px;
+    height: 500p;
+}
+
